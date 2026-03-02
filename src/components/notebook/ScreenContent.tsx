@@ -134,7 +134,7 @@ const ScreenContent = () => {
               className="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-8 md:mb-12"
             >
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-25 group-hover:opacity-75 transition duration-1000"></div>
                 <Avatar className="h-16 w-16 md:h-32 md:w-32 border-2 border-slate-800 relative z-10 overflow-hidden">
                   <AvatarImage 
                     src={profileImg} 
@@ -160,7 +160,7 @@ const ScreenContent = () => {
             </motion.div>
 
             {/* Code Block Section */}
-            <section className="mb-8 md:mb-12 bg-slate-900/30 p-3 md:p-6 rounded-lg border border-slate-800/50 backdrop-blur-sm overflow-hidden">
+            <section className="mb-8 md:mb-12 bg-slate-900/30 p-3 md:p-6 rounded-lg border border-slate-800/50 overflow-hidden">
               <div className="flex items-center gap-1 text-blue-400 mb-2 md:mb-4 text-[8px] md:text-sm">
                 <span className="text-slate-600">1</span>
                 <span className="text-purple-400">const</span>
