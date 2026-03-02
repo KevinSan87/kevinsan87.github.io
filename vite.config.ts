@@ -4,8 +4,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig(() => ({
-  // Usar './' permite que o app funcione em qualquer subpasta ou no root
-  base: './',
+  // Para domínios de usuário (username.github.io), o base deve ser '/'
+  base: '/',
   server: {
     host: "::",
     port: 8080,
