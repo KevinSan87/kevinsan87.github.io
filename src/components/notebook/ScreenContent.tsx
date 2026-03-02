@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from 'react';
-import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee } from 'lucide-react';
+import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee, Activity } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -13,6 +13,7 @@ const ScreenContent = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
   const stackRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const activityRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -77,6 +78,13 @@ const ScreenContent = () => {
             title="Stack"
           >
             <Database size={12} className="md:w-[18px] md:h-[18px]" />
+          </button>
+          <button 
+            onClick={() => scrollToSection(activityRef)}
+            className="p-1 md:p-2 hover:bg-slate-800/50 rounded-md hover:text-blue-400 transition-colors"
+            title="Atividade"
+          >
+            <Activity size={12} className="md:w-[18px] md:h-[18px]" />
           </button>
           <button 
             onClick={() => scrollToSection(contactRef)}
@@ -272,6 +280,44 @@ const ScreenContent = () => {
                     {tech}
                   </div>
                 ))}
+              </div>
+            </section>
+
+            {/* GitHub Activity Section */}
+            <section ref={activityRef} className="mb-8 md:mb-12">
+              <h2 className="text-xs md:text-xl font-bold text-white mb-4 md:mb-6 flex items-center gap-2">
+                <div className="p-1.5 bg-emerald-500/10 rounded-md">
+                  <Activity size={14} className="text-emerald-400 md:w-5 md:h-5" />
+                </div>
+                GITHUB ACTIVITY
+              </h2>
+              <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 overflow-hidden">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[8px] md:text-sm text-slate-400">@KevinSan87 contributions</span>
+                    <Github size={14} className="text-slate-600" />
+                  </div>
+                  <div className="w-full overflow-x-auto pb-2">
+                    <img 
+                      src="https://ghchart.rshah.org/3b82f6/KevinSan87" 
+                      alt="Kevin's GitHub Contributions Chart"
+                      className="min-w-[600px] md:min-w-full h-auto filter brightness-90 contrast-125"
+                    />
+                  </div>
+                  <div className="flex justify-end gap-4 text-[7px] md:text-[10px] text-slate-500">
+                    <div className="flex items-center gap-1">
+                      <div className="w-2 h-2 bg-slate-800 rounded-sm"></div>
+                      <span>Less</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <div className="w-2 h-2 bg-blue-900 rounded-sm"></div>
+                      <div className="w-2 h-2 bg-blue-700 rounded-sm"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-sm"></div>
+                      <div className="w-2 h-2 bg-blue-300 rounded-sm"></div>
+                      <span>More</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
