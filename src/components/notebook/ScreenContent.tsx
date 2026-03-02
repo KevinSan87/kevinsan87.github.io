@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from 'react';
-import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee, Activity, Star, GitBranch } from 'lucide-react';
+import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee, Activity, Star, GitBranch, CheckCircle2 } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -292,21 +292,43 @@ const ScreenContent = () => {
                 GITHUB ACTIVITY
               </h2>
               
+              {/* Professional Stats Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-center justify-center gap-1">
-                  <span className="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest">Total Contributions</span>
-                  <span className="text-xl md:text-3xl font-black text-emerald-400">350+</span>
+                <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-start gap-2 group hover:border-emerald-500/30 transition-all">
+                  <div className="flex items-center gap-2 text-emerald-400/60 group-hover:text-emerald-400 transition-colors">
+                    <Activity size={14} />
+                    <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Activity</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xl md:text-3xl font-black text-white">2.7k+</span>
+                    <span className="text-[8px] md:text-[10px] text-slate-500 font-medium">Contributions (Last Year)</span>
+                  </div>
                 </div>
-                <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-center justify-center gap-1">
-                  <span className="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest">Public Repos</span>
-                  <span className="text-xl md:text-3xl font-black text-blue-400">15</span>
+
+                <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-start gap-2 group hover:border-blue-500/30 transition-all">
+                  <div className="flex items-center gap-2 text-blue-400/60 group-hover:text-blue-400 transition-colors">
+                    <GitBranch size={14} />
+                    <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Repositories</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xl md:text-3xl font-black text-white">15+</span>
+                    <span className="text-[8px] md:text-[10px] text-slate-500 font-medium">Public Projects</span>
+                  </div>
                 </div>
-                <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-center justify-center gap-1">
-                  <span className="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest">Current Streak</span>
-                  <span className="text-xl md:text-3xl font-black text-purple-400">Active</span>
+
+                <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-start gap-2 group hover:border-purple-500/30 transition-all">
+                  <div className="flex items-center gap-2 text-purple-400/60 group-hover:text-purple-400 transition-colors">
+                    <CheckCircle2 size={14} />
+                    <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Status</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xl md:text-3xl font-black text-white">Active</span>
+                    <span className="text-[8px] md:text-[10px] text-slate-500 font-medium">Developer</span>
+                  </div>
                 </div>
               </div>
 
+              {/* Contribution Chart Container */}
               <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 overflow-hidden">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between">
@@ -318,10 +340,6 @@ const ScreenContent = () => {
                       <div className="flex items-center gap-1 text-[7px] md:text-[10px] text-slate-500">
                         <Star size={10} className="text-yellow-500" />
                         <span>Open Source</span>
-                      </div>
-                      <div className="flex items-center gap-1 text-[7px] md:text-[10px] text-slate-500">
-                        <GitBranch size={10} className="text-blue-400" />
-                        <span>Commits</span>
                       </div>
                     </div>
                   </div>
