@@ -81,7 +81,7 @@ const ScreenContent = () => {
         <div className="w-4 md:w-10" />
       </div>
 
-      <div className="flex-1 flex flex-col md:flex-row overflow-hidden min-h-0">
+      <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
         {/* Sidebar / Top Navigation */}
         <div className="w-full md:w-14 bg-[#0f172a] border-b md:border-b-0 md:border-r border-slate-800/50 flex flex-row md:flex-col items-center justify-center md:justify-start py-1.5 md:py-3 gap-4 md:gap-6 text-slate-500 shrink-0">
           <button 
@@ -122,7 +122,7 @@ const ScreenContent = () => {
         </div>
 
         {/* Main Editor Area */}
-        <ScrollArea className="flex-1 bg-[#020617] min-h-0">
+        <ScrollArea className="flex-1 bg-[#020617]">
           <div className="p-4 md:p-10 max-w-3xl mx-auto overflow-x-hidden">
             
             {/* Profile Header */}
@@ -399,7 +399,7 @@ const ScreenContent = () => {
             </section>
 
             {/* Contact Section */}
-            <section ref={contactRef} className="pb-20 md:pb-12">
+            <section ref={contactRef} className="pb-6 md:pb-12">
               <div className="flex flex-wrap gap-2 md:gap-4">
                 <a href="https://github.com/KevinSan87" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white text-[8px] md:text-sm transition-all hover:scale-105">
                   <Github size={12} className="md:w-4 md:h-4" /> GitHub
