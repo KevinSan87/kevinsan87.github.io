@@ -13,11 +13,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* O basename deve ser o nome do seu repositório no GitHub */}
-      <BrowserRouter basename="/Personal-Website">
+      {/* Removido o basename fixo para funcionar tanto no root quanto em subpastas */}
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

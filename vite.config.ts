@@ -4,8 +4,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig(() => ({
-  // Define o caminho base como o nome do repositório para o GitHub Pages
-  base: '/Personal-Website/',
+  // Usar './' permite que o app funcione em qualquer subpasta ou no root
+  base: './',
   server: {
     host: "::",
     port: 8080,
