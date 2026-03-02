@@ -50,42 +50,80 @@ const ScreenContent = () => {
     { label: "role", value: "'Software Engineering Student'", color: "text-emerald-400" },
     { label: "semester", value: "'6º Semestre'", color: "text-emerald-400" },
     { label: "focus", value: "'Fullstack Development'", color: "text-emerald-400" },
-    { label: "status", value: "'Building robust systems'", color: "text-emerald-400" },
+    { label: "status", value: "'Building robust systems and logic'", color: "text-emerald-400" },
   ];
 
   const stack = [
-    'Java', 'Node.js', 'TypeScript', 'SQL', 'C / C++', 'HTML', 'Git', 'React'
+    'Java', 
+    'Node.js', 
+    'TypeScript', 
+    'SQL', 
+    'C / C++', 
+    'HTML', 
+    'Git & GitHub', 
+    'React', 
+    'Web Architecture'
   ];
 
   return (
-    <div className="h-full w-full bg-[#020617] text-slate-300 font-mono text-[8px] md:text-sm overflow-hidden flex flex-col border border-slate-800/50 rounded-sm">
+    <div className="h-full w-full bg-[#020617] text-slate-300 font-mono text-[9px] md:text-sm overflow-hidden flex flex-col border border-slate-800/50 rounded-sm">
       {/* Top Bar - VS Code Style */}
       <div className="bg-[#0f172a] p-1 md:p-2 flex items-center justify-between border-b border-slate-800/50 shrink-0">
         <div className="flex gap-1 md:gap-1.5">
-          <div className="w-1 h-1 md:w-2.5 md:h-2.5 rounded-full bg-[#ff5f56]" />
-          <div className="w-1 h-1 md:w-2.5 md:h-2.5 rounded-full bg-[#ffbd2e]" />
-          <div className="w-1 h-1 md:w-2.5 md:h-2.5 rounded-full bg-[#27c93f]" />
+          <div className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full bg-[#ff5f56]" />
+          <div className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full bg-[#ffbd2e]" />
+          <div className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full bg-[#27c93f]" />
         </div>
-        <div className="text-[6px] md:text-[10px] text-slate-500 flex items-center gap-1 md:gap-2 truncate px-1">
-          <Code2 size={7} className="text-blue-400 shrink-0 md:w-[10px]" />
+        <div className="text-[7px] md:text-[10px] text-slate-500 flex items-center gap-1 md:gap-2 truncate px-1">
+          <Code2 size={8} className="text-blue-400 shrink-0 md:w-[10px]" />
           <span className="truncate">portfolio.ts</span>
         </div>
-        <div className="w-2 md:w-10" />
+        <div className="w-4 md:w-10" />
       </div>
 
       <div className="flex-1 flex flex-col-reverse md:flex-row overflow-hidden">
-        {/* Navigation Bar */}
-        <div className="w-full md:w-14 h-8 md:h-auto bg-[#0f172a] border-t md:border-t-0 md:border-r border-slate-800/50 flex md:flex-col items-center justify-around md:justify-start py-0 md:py-6 gap-0 md:gap-6 text-slate-500 shrink-0">
-          <button onClick={() => scrollToSection(aboutRef)} className="p-1.5 md:p-2 hover:text-blue-400 transition-colors"><User size={12} className="md:w-[18px] md:h-[18px]" /></button>
-          <button onClick={() => scrollToSection(projectsRef)} className="p-1.5 md:p-2 hover:text-blue-400 transition-colors"><Layers size={12} className="md:w-[18px] md:h-[18px]" /></button>
-          <button onClick={() => scrollToSection(stackRef)} className="p-1.5 md:p-2 hover:text-blue-400 transition-colors"><Database size={12} className="md:w-[18px] md:h-[18px]" /></button>
-          <button onClick={() => scrollToSection(activityRef)} className="p-1.5 md:p-2 hover:text-blue-400 transition-colors"><Activity size={12} className="md:w-[18px] md:h-[18px]" /></button>
-          <button onClick={() => scrollToSection(contactRef)} className="p-1.5 md:p-2 hover:text-blue-400 transition-colors"><Github size={12} className="md:w-[18px] md:h-[18px]" /></button>
+        {/* Navigation Bar (Bottom on Mobile, Sidebar on Desktop) */}
+        <div className="w-full md:w-14 h-10 md:h-auto bg-[#0f172a] border-t md:border-t-0 md:border-r border-slate-800/50 flex md:flex-col items-center justify-around md:justify-start py-0 md:py-6 gap-0 md:gap-6 text-slate-500 shrink-0">
+          <button 
+            onClick={() => scrollToSection(aboutRef)}
+            className="p-2 md:p-2 hover:bg-slate-800/50 rounded-md hover:text-blue-400 transition-colors"
+            title="Sobre"
+          >
+            <User size={14} className="md:w-[18px] md:h-[18px]" />
+          </button>
+          <button 
+            onClick={() => scrollToSection(projectsRef)}
+            className="p-2 md:p-2 hover:bg-slate-800/50 rounded-md hover:text-blue-400 transition-colors"
+            title="Projetos"
+          >
+            <Layers size={14} className="md:w-[18px] md:h-[18px]" />
+          </button>
+          <button 
+            onClick={() => scrollToSection(stackRef)}
+            className="p-2 md:p-2 hover:bg-slate-800/50 rounded-md hover:text-blue-400 transition-colors"
+            title="Stack"
+          >
+            <Database size={14} className="md:w-[18px] md:h-[18px]" />
+          </button>
+          <button 
+            onClick={() => scrollToSection(activityRef)}
+            className="p-2 md:p-2 hover:bg-slate-800/50 rounded-md hover:text-blue-400 transition-colors"
+            title="Atividade"
+          >
+            <Activity size={14} className="md:w-[18px] md:h-[18px]" />
+          </button>
+          <button 
+            onClick={() => scrollToSection(contactRef)}
+            className="p-2 md:p-2 hover:bg-slate-800/50 rounded-md hover:text-blue-400 transition-colors"
+            title="Contato"
+          >
+            <Github size={14} className="md:w-[18px] md:h-[18px]" />
+          </button>
         </div>
 
         {/* Main Editor Area */}
         <ScrollArea className="flex-1 bg-[#020617]">
-          <div className="p-2 md:p-10 max-w-3xl mx-auto overflow-x-hidden">
+          <div className="p-3 md:p-10 max-w-3xl mx-auto overflow-x-hidden">
             
             {/* Profile Header */}
             <motion.div 
@@ -93,84 +131,166 @@ const ScreenContent = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 }}
-              className="flex flex-col md:flex-row items-center gap-2 md:gap-8 mb-4 md:mb-12"
+              className="flex flex-col md:flex-row items-center gap-3 md:gap-8 mb-6 md:mb-12"
             >
               <div className="relative group">
-                <Avatar className="h-12 w-12 md:h-32 md:w-32 border-2 border-slate-800 relative z-10 overflow-hidden">
-                  <AvatarImage src={profileImg} alt="Kevin" className="object-cover object-top scale-125" />
-                  <AvatarFallback className="bg-slate-900 text-slate-400 text-[8px] md:text-2xl">KC</AvatarFallback>
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+                <Avatar className="h-14 w-14 md:h-32 md:w-32 border-2 border-slate-800 relative z-10 overflow-hidden">
+                  <AvatarImage 
+                    src={profileImg} 
+                    alt="Kevin" 
+                    className="object-cover object-top scale-125 group-hover:scale-150 transition-transform duration-500" 
+                  />
+                  <AvatarFallback className="bg-slate-900 text-slate-400 text-xs md:text-2xl">KC</AvatarFallback>
                 </Avatar>
-                <div className="absolute bottom-0 right-0 w-2 h-2 md:w-5 md:h-5 bg-emerald-500 border-2 border-[#020617] rounded-full z-20"></div>
+                <div className="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 md:w-5 md:h-5 bg-emerald-500 border-2 border-[#020617] rounded-full z-20"></div>
               </div>
               
               <div className="text-center md:text-left">
-                <h1 className="text-[10px] md:text-3xl font-black text-white tracking-tight">Kevin de Santana Carvalho</h1>
-                <p className="text-blue-400 font-medium mb-1 md:mb-4 text-[7px] md:text-lg">Software Engineering Student</p>
+                <div className="flex items-center justify-center md:justify-start gap-1.5 mb-1 md:mb-2">
+                  <h1 className="text-[11px] md:text-3xl font-black text-white tracking-tight">Kevin de Santana Carvalho</h1>
+                  <Monitor size={10} className="text-blue-400 animate-pulse md:w-5 md:h-5" />
+                </div>
+                <p className="text-blue-400 font-medium mb-2 md:mb-4 text-[8px] md:text-lg">Software Engineering Student</p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-1 md:gap-2">
-                  <Badge className="bg-blue-500/10 text-blue-400 border-blue-500/20 text-[5px] md:text-xs px-1 py-0">Fullstack</Badge>
-                  <Badge className="bg-purple-500/10 text-purple-400 border-purple-500/20 text-[5px] md:text-xs px-1 py-0">Learning 🚀</Badge>
+                  <Badge className="bg-blue-500/10 text-blue-400 border-blue-500/20 text-[6px] md:text-xs px-1 py-0 md:px-2.5 md:py-0.5">Fullstack Development</Badge>
+                  <Badge className="bg-purple-500/10 text-purple-400 border-purple-500/20 text-[6px] md:text-xs px-1 py-0 md:px-2.5 md:py-0.5">Always Learning 🚀</Badge>
                 </div>
               </div>
             </motion.div>
 
             {/* Code Block Section */}
-            <section className="mb-4 md:mb-12 bg-slate-900/30 p-2 md:p-6 rounded-lg border border-slate-800/50 overflow-hidden">
-              <div className="flex items-center gap-1 text-blue-400 mb-1 text-[6px] md:text-sm">
+            <section className="mb-6 md:mb-12 bg-slate-900/30 p-2.5 md:p-6 rounded-lg border border-slate-800/50 backdrop-blur-sm overflow-hidden">
+              <div className="flex items-center gap-1 text-blue-400 mb-1.5 md:mb-4 text-[7px] md:text-sm">
                 <span className="text-slate-600">1</span>
                 <span className="text-purple-400">const</span>
                 <span className="text-yellow-400">dev</span>
-                <span className="text-slate-300">= {"{"}</span>
+                <span className="text-slate-300">=</span>
+                <span className="text-slate-300">{"{"}</span>
               </div>
-              <div className="pl-2 md:pl-8 space-y-0.5">
+              
+              <div className="pl-3 md:pl-8 space-y-1">
                 {codeLines.map((line, idx) => (
-                  <div key={line.label} className="flex items-start gap-1 text-[6px] md:text-sm">
-                    <span className="text-slate-600 w-2 md:w-4 shrink-0">{idx + 2}</span>
+                  <motion.div 
+                    key={line.label}
+                    initial={{ opacity: 0, x: -5 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.5 + (idx * 0.1) }}
+                    className="flex items-start gap-1.5 md:gap-4 text-[7px] md:text-sm"
+                  >
+                    <span className="text-slate-600 w-2.5 md:w-4 shrink-0">{idx + 2}</span>
                     <span className="text-blue-300 shrink-0">{line.label}:</span>
-                    <span className={`${line.color} break-all`}>{line.value}</span>
-                  </div>
+                    <span className={`${line.color} break-words`}>{line.value}</span>
+                  </motion.div>
                 ))}
               </div>
-              <div className="text-slate-300 mt-0.5 text-[6px] md:text-sm">
+              
+              <div className="text-slate-300 mt-1 text-[7px] md:text-sm">
                 <span className="text-slate-600">{codeLines.length + 2}</span> {"}"};
               </div>
             </section>
 
             {/* About Section */}
-            <section className="mb-4 md:mb-12">
-              <h2 className="text-[9px] md:text-xl font-bold text-white mb-2 md:mb-6 flex items-center gap-1.5">
-                <Terminal size={10} className="text-emerald-400 md:w-5 md:h-5" /> SOBRE
+            <section className="mb-6 md:mb-12">
+              <h2 className="text-[10px] md:text-xl font-bold text-white mb-3 md:mb-6 flex items-center gap-2">
+                <div className="p-1 bg-emerald-500/10 rounded-md">
+                  <Terminal size={12} className="text-emerald-400 md:w-5 md:h-5" />
+                </div>
+                SOBRE
               </h2>
-              <p className="text-slate-400 leading-relaxed text-[7px] md:text-base">
-                Estudante de Software com foco em Backend, regras de negócio e modelagem de dados.
-              </p>
+              <div className="space-y-3 text-slate-400 leading-relaxed text-[8px] md:text-base">
+                <p>
+                  Estudante de Software com foco em desenvolvimento Backend. Experiência na implementação de regras de negócio e modelagem de banco de dados.
+                </p>
+                <ul className="grid grid-cols-1 gap-1.5 pl-1">
+                  {[
+                    'Lógica e regras de negócio',
+                    'Banco de Dados Relacional',
+                    'Integração entre frontend e backend',
+                    'Estruturação de aplicações web'
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-1.5 text-slate-300">
+                      <div className="w-1 h-1 bg-emerald-500 rounded-full shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </section>
 
             {/* Projects Section */}
-            <section ref={projectsRef} className="mb-4 md:mb-12">
-              <h2 className="text-[9px] md:text-xl font-bold text-white mb-2 md:mb-6 flex items-center gap-1.5">
-                <Layers size={10} className="text-purple-400 md:w-5 md:h-5" /> PROJETOS
-              </h2>
-              <div className="space-y-2 md:space-y-4">
-                <div className="p-2 md:p-6 rounded-lg border border-slate-800 bg-slate-900/40">
-                  <h3 className="font-bold text-[8px] md:text-xl text-blue-400">LinkStudio</h3>
-                  <p className="text-[7px] md:text-base text-slate-300">Plataforma de Agendamento</p>
+            <section ref={projectsRef} className="mb-6 md:mb-12">
+              <h2 className="text-[10px] md:text-xl font-bold text-white mb-3 md:mb-6 flex items-center gap-2">
+                <div className="p-1 bg-purple-500/10 rounded-md">
+                  <Layers size={12} className="text-purple-400 md:w-5 md:h-5" />
                 </div>
-                <div className="p-2 md:p-6 rounded-lg border border-slate-800 bg-slate-900/40">
-                  <h3 className="font-bold text-[8px] md:text-xl text-orange-400">Jornada Espacial</h3>
-                  <p className="text-[7px] md:text-base text-slate-300">Projeto Java (POO)</p>
+                PROJETOS
+              </h2>
+              
+              <div className="space-y-4">
+                {/* Project 1: LinkStudio */}
+                <div className="p-3 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-blue-500/50 transition-colors group">
+                  <div className="flex justify-between items-start mb-2 md:mb-4">
+                    <div>
+                      <h3 className="font-bold text-[9px] md:text-xl text-blue-400 group-hover:text-blue-300 transition-colors">LinkStudio</h3>
+                      <p className="text-[7px] md:text-sm text-slate-500">Plataforma de Agendamento</p>
+                    </div>
+                    <a href="https://www.linkstudio.com.br/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-slate-800 rounded-full hover:bg-blue-600 transition-colors">
+                      <ExternalLink size={10} className="text-white md:w-4 md:h-4" />
+                    </a>
+                  </div>
+                  <p className="text-[8px] md:text-base text-slate-300 mb-3">
+                    Aplicação web completa para gerenciamento de agendamentos.
+                  </p>
+                  <div className="flex flex-wrap gap-1 md:gap-2">
+                    {['Backend', 'SQL', 'React'].map((resp) => (
+                      <span key={resp} className="text-[6px] md:text-xs px-1.5 py-0.5 bg-slate-800/50 rounded-md text-slate-400 border border-slate-700/50">
+                        {resp}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Project 2: Jornada Espacial */}
+                <div className="p-3 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-orange-500/50 transition-colors group">
+                  <div className="flex justify-between items-start mb-2 md:mb-4">
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <h3 className="font-bold text-[9px] md:text-xl text-orange-400 group-hover:text-orange-300 transition-colors">Jornada Espacial</h3>
+                        <Coffee size={10} className="text-orange-500 md:w-5 md:h-5" />
+                      </div>
+                      <p className="text-[7px] md:text-sm text-slate-500">Projeto Java (POO)</p>
+                    </div>
+                    <a href="https://github.com/KevinSan87/Jornada-Espacial" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-slate-800 rounded-full hover:bg-orange-600 transition-colors">
+                      <Github size={10} className="text-white md:w-4 md:h-4" />
+                    </a>
+                  </div>
+                  <p className="text-[8px] md:text-base text-slate-300 mb-3">
+                    Aplicação Java focada em lógica e modelagem orientada a objetos.
+                  </p>
+                  <div className="flex flex-wrap gap-1 md:gap-2">
+                    {['POO', 'Java', 'Git'].map((resp) => (
+                      <span key={resp} className="text-[6px] md:text-xs px-1.5 py-0.5 bg-slate-800/50 rounded-md text-slate-400 border border-slate-700/50">
+                        {resp}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </section>
 
             {/* Stack Section */}
-            <section ref={stackRef} className="mb-4 md:mb-12">
-              <h2 className="text-[9px] md:text-xl font-bold text-white mb-2 md:mb-6 flex items-center gap-1.5">
-                <Cpu size={10} className="text-blue-400 md:w-5 md:h-5" /> STACK
+            <section ref={stackRef} className="mb-6 md:mb-12">
+              <h2 className="text-[10px] md:text-xl font-bold text-white mb-3 md:mb-6 flex items-center gap-2">
+                <div className="p-1 bg-blue-500/10 rounded-md">
+                  <Cpu size={12} className="text-blue-400 md:w-5 md:h-5" />
+                </div>
+                STACK
               </h2>
-              <div className="grid grid-cols-2 gap-1 md:gap-4">
+              <div className="grid grid-cols-2 gap-1.5 md:gap-4">
                 {stack.map((tech) => (
-                  <div key={tech} className="flex items-center gap-1 p-1 md:p-3 rounded-md bg-slate-900/50 border border-slate-800/50 text-[6px] md:text-sm">
-                    <div className="w-1 h-1 bg-blue-500 rounded-full shrink-0"></div>
+                  <div key={tech} className="flex items-center gap-1.5 p-1.5 md:p-3 rounded-lg bg-slate-900/50 border border-slate-800/50 text-[7px] md:text-sm text-slate-300 hover:bg-slate-800/50 transition-colors">
+                    <div className="w-1 h-1 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.5)] shrink-0"></div>
                     {tech}
                   </div>
                 ))}
@@ -178,46 +298,95 @@ const ScreenContent = () => {
             </section>
 
             {/* GitHub Activity Section */}
-            <section ref={activityRef} className="mb-4 md:mb-12">
-              <h2 className="text-[9px] md:text-xl font-bold text-white mb-2 md:mb-6 flex items-center gap-1.5">
-                <Activity size={10} className="text-emerald-400 md:w-5 md:h-5" /> ATIVIDADE
+            <section ref={activityRef} className="mb-6 md:mb-12">
+              <h2 className="text-[10px] md:text-xl font-bold text-white mb-3 md:mb-6 flex items-center gap-2">
+                <div className="p-1 bg-emerald-500/10 rounded-md">
+                  <Activity size={12} className="text-emerald-400 md:w-5 md:h-5" />
+                </div>
+                ATIVIDADE
               </h2>
-              <div className="grid grid-cols-3 gap-1 md:gap-4 mb-2">
-                <div className="p-1.5 md:p-6 rounded-lg border border-slate-800 bg-slate-900/40">
-                  <span className="text-[5px] md:text-[10px] text-slate-500 block">Contribs</span>
-                  <span className="text-[8px] md:text-2xl font-bold text-white">{githubStats.contributions}</span>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mb-4">
+                <div className="p-3 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-start gap-1 group hover:border-emerald-500/30 transition-all">
+                  <div className="flex items-center gap-1.5 text-emerald-400/60 group-hover:text-emerald-400 transition-colors">
+                    <Activity size={10} />
+                    <span className="text-[6px] md:text-[10px] font-bold uppercase tracking-widest">Activity</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm md:text-3xl font-black text-white">{githubStats.contributions}</span>
+                    <span className="text-[6px] md:text-[10px] text-slate-500 font-medium">Contributions</span>
+                  </div>
                 </div>
-                <div className="p-1.5 md:p-6 rounded-lg border border-slate-800 bg-slate-900/40">
-                  <span className="text-[5px] md:text-[10px] text-slate-500 block">Repos</span>
-                  <span className="text-[8px] md:text-2xl font-bold text-white">{githubStats.repos}</span>
+
+                <div className="p-3 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-start gap-1 group hover:border-blue-500/30 transition-all">
+                  <div className="flex items-center gap-1.5 text-blue-400/60 group-hover:text-blue-400 transition-colors">
+                    <GitBranch size={10} />
+                    <span className="text-[6px] md:text-[10px] font-bold uppercase tracking-widest">Repos</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm md:text-3xl font-black text-white">{githubStats.repos}+</span>
+                    <span className="text-[6px] md:text-[10px] text-slate-500 font-medium">Public Projects</span>
+                  </div>
                 </div>
-                <div className="p-1.5 md:p-6 rounded-lg border border-slate-800 bg-slate-900/40">
-                  <span className="text-[5px] md:text-[10px] text-slate-500 block">Status</span>
-                  <span className="text-[8px] md:text-2xl font-bold text-white">Active</span>
+
+                <div className="p-3 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-start gap-1 group hover:border-purple-500/30 transition-all">
+                  <div className="flex items-center gap-1.5 text-purple-400/60 group-hover:text-purple-400 transition-colors">
+                    <CheckCircle2 size={10} />
+                    <span className="text-[6px] md:text-[10px] font-bold uppercase tracking-widest">Status</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm md:text-3xl font-black text-white">Active</span>
+                    <span className="text-[6px] md:text-[10px] text-slate-500 font-medium">Developer</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-3 md:p-6 rounded-xl border border-slate-800 bg-[#0f172a] overflow-hidden">
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <Github size={10} className="text-slate-400" />
+                      <span className="text-[7px] md:text-sm text-slate-300 font-bold">@KevinSan87</span>
+                    </div>
+                  </div>
+                  
+                  <div className="w-full overflow-x-auto pb-1 scrollbar-hide">
+                    <img 
+                      src="https://ghchart.rshah.org/39d353/KevinSan87" 
+                      alt="GitHub Chart"
+                      className="min-w-[400px] md:min-w-full h-auto filter invert-[0.85] hue-rotate-[140deg] brightness-[0.6] contrast-[1.4] mix-blend-screen"
+                    />
+                  </div>
                 </div>
               </div>
             </section>
 
             {/* Contact Section */}
-            <section ref={contactRef} className="pb-2 md:pb-12">
-              <div className="flex gap-1 md:gap-4">
-                <a href="https://github.com/KevinSan87" target="_blank" rel="noopener noreferrer" className="px-2 py-1 rounded-full bg-slate-800 text-[6px] md:text-sm">GitHub</a>
-                <a href="mailto:Kevindesantana87@gmail.com" className="px-2 py-1 rounded-full bg-blue-600 text-[6px] md:text-sm">Contato</a>
+            <section ref={contactRef} className="pb-4 md:pb-12">
+              <div className="flex flex-wrap gap-1.5 md:gap-4">
+                <a href="https://github.com/KevinSan87" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-2.5 py-1.5 md:px-5 md:py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white text-[7px] md:text-sm transition-all">
+                  <Github size={10} className="md:w-4 md:h-4" /> GitHub
+                </a>
+                <a href="mailto:Kevindesantana87@gmail.com" className="flex items-center gap-1.5 px-2.5 py-1.5 md:px-5 md:py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-[7px] md:text-sm transition-all">
+                  <Mail size={10} className="md:w-4 md:h-4" /> Contato
+                </a>
               </div>
             </section>
           </div>
         </ScrollArea>
       </div>
 
-      {/* Footer Bar */}
-      <div className="bg-blue-600 text-white px-1 md:px-4 py-0.5 md:py-1 flex items-center justify-between text-[5px] md:text-[10px] shrink-0">
-        <div className="flex items-center gap-1">
-          <div className="w-1 h-1 bg-white rounded-full animate-pulse"></div>
-          <span>main*</span>
+      {/* Footer Bar - VS Code Style */}
+      <div className="bg-blue-600 text-white px-2 md:px-4 py-0.5 md:py-1.5 flex items-center justify-between text-[5px] md:text-[10px] font-bold shrink-0">
+        <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-1">
+            <div className="w-1 h-1 md:w-2 md:h-2 bg-white rounded-full animate-pulse"></div>
+            <span>main*</span>
+          </div>
         </div>
-        <div className="flex items-center gap-1 opacity-90">
+        <div className="flex items-center gap-2 md:gap-4 opacity-90">
           <span>UTF-8</span>
-          <span>TSX</span>
+          <span>TypeScript JSX</span>
         </div>
       </div>
     </div>
