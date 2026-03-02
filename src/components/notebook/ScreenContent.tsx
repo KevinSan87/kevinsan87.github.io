@@ -123,7 +123,7 @@ const ScreenContent = () => {
 
         {/* Main Editor Area */}
         <ScrollArea className="flex-1 bg-[#020617]">
-          <div className="p-2 md:p-10 max-w-3xl mx-auto overflow-x-hidden">
+          <div className="p-4 md:p-10 max-w-3xl mx-auto overflow-x-hidden">
             
             {/* Profile Header */}
             <motion.div 
