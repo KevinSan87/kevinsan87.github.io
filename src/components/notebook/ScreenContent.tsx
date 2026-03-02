@@ -123,7 +123,7 @@ const ScreenContent = () => {
 
         {/* Main Editor Area */}
         <ScrollArea className="flex-1 bg-[#020617]">
-          <div className="p-4 md:p-10 max-w-3xl mx-auto overflow-x-hidden">
+          <div className="p-3 md:p-10 max-w-3xl mx-auto overflow-x-hidden">
             
             {/* Profile Header */}
             <motion.div 
@@ -169,7 +169,7 @@ const ScreenContent = () => {
                 <span className="text-slate-300">{"{"}</span>
               </div>
               
-              <div className="pl-4 md:pl-8 space-y-1.5">
+              <div className="pl-2 md:pl-8 space-y-1.5">
                 {codeLines.map((line, idx) => (
                   <motion.div 
                     key={line.label}
@@ -355,7 +355,7 @@ const ScreenContent = () => {
               </div>
 
               {/* Contribution Chart Container */}
-              <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-[#0f172a] overflow-hidden relative">
+              <div className="p-3 md:p-6 rounded-xl border border-slate-800 bg-[#0f172a] overflow-hidden relative">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -374,7 +374,7 @@ const ScreenContent = () => {
                     <img 
                       src="https://ghchart.rshah.org/39d353/KevinSan87" 
                       alt="Kevin's GitHub Contributions Chart"
-                      className="min-w-[600px] md:min-w-full h-auto filter invert-[0.85] hue-rotate-[140deg] brightness-[0.6] contrast-[1.4] mix-blend-screen"
+                      className="w-full min-w-[400px] md:min-w-full h-auto filter invert-[0.85] hue-rotate-[140deg] brightness-[0.6] contrast-[1.4] mix-blend-screen"
                     />
                   </div>
                   
