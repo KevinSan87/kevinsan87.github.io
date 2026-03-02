@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee, Activity, Star, GitBranch, CheckCircle2 } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -14,6 +14,32 @@ const ScreenContent = () => {
   const stackRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const activityRef = useRef<HTMLDivElement>(null);
+
+  const [githubStats, setGithubStats] = useState({
+    repos: 15,
+    followers: 0,
+    contributions: "2.7k+"
+  });
+
+  useEffect(() => {
+    const fetchGithubData = async () => {
+      try {
+        const response = await fetch('https://api.github.com/users/KevinSan87');
+        const data = await response.json();
+        if (data.public_repos) {
+          setGithubStats(prev => ({
+            ...prev,
+            repos: data.public_repos,
+            followers: data.followers
+          }));
+        }
+      } catch (error) {
+        console.error("Erro ao buscar dados do GitHub:", error);
+      }
+    };
+
+    fetchGithubData();
+  }, []);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -300,7 +326,7 @@ const ScreenContent = () => {
                     <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Activity</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-xl md:text-3xl font-black text-white">2.7k+</span>
+                    <span className="text-xl md:text-3xl font-black text-white">{githubStats.contributions}</span>
                     <span className="text-[8px] md:text-[10px] text-slate-500 font-medium">Contributions (Last Year)</span>
                   </div>
                 </div>
@@ -311,7 +337,7 @@ const ScreenContent = () => {
                     <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Repositories</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-xl md:text-3xl font-black text-white">15+</span>
+                    <span className="text-xl md:text-3xl font-black text-white">{githubStats.repos}+</span>
                     <span className="text-[8px] md:text-[10px] text-slate-500 font-medium">Public Projects</span>
                   </div>
                 </div>
@@ -329,7 +355,7 @@ const ScreenContent = () => {
               </div>
 
               {/* Contribution Chart Container */}
-              <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 overflow-hidden">
+              <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-[#0f172a] overflow-hidden relative">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -346,9 +372,9 @@ const ScreenContent = () => {
                   
                   <div className="w-full overflow-x-auto pb-2 scrollbar-hide">
                     <img 
-                      src="https://ghchart.rshah.org/10b981/KevinSan87" 
+                      src="https://ghchart.rshah.org/39d353/KevinSan87" 
                       alt="Kevin's GitHub Contributions Chart"
-                      className="min-w-[600px] md:min-w-full h-auto filter brightness-110 contrast-125"
+                      className="min-w-[600px] md:min-w-full h-auto filter invert-[0.85] hue-rotate-[140deg] brightness-[0.6] contrast-[1.4] mix-blend-screen"
                     />
                   </div>
                   
@@ -360,10 +386,10 @@ const ScreenContent = () => {
                         <span>Less</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-[#10b98133] rounded-sm"></div>
-                        <div className="w-2 h-2 bg-[#10b98166] rounded-sm"></div>
-                        <div className="w-2 h-2 bg-[#10b981aa] rounded-sm"></div>
-                        <div className="w-2 h-2 bg-[#10b981] rounded-sm"></div>
+                        <div className="w-2 h-2 bg-[#39d35333] rounded-sm"></div>
+                        <div className="w-2 h-2 bg-[#39d35366] rounded-sm"></div>
+                        <div className="w-2 h-2 bg-[#39d353aa] rounded-sm"></div>
+                        <div className="w-2 h-2 bg-[#39d353] rounded-sm"></div>
                         <span>More</span>
                       </div>
                     </div>
