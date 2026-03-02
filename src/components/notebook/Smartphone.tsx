@@ -19,7 +19,7 @@ const Smartphone = () => {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center w-full max-w-[280px] xs:max-w-[320px] aspect-[9/19] scale-100 transition-transform duration-500">
+    <div className="relative flex items-center justify-center w-full max-w-[320px] aspect-[9/19] perspective-1000 scale-110 sm:scale-100 transition-transform duration-500">
       {/* Phone Container */}
       <motion.div 
         initial={{ rotateY: -10, rotateX: 5, opacity: 0, scale: 0.9 }}
