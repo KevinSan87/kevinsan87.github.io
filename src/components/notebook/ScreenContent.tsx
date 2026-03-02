@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from 'react';
-import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee, Activity } from 'lucide-react';
+import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee, Activity, Star, GitBranch } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -291,30 +291,63 @@ const ScreenContent = () => {
                 </div>
                 GITHUB ACTIVITY
               </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-center justify-center gap-1">
+                  <span className="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest">Total Contributions</span>
+                  <span className="text-xl md:text-3xl font-black text-emerald-400">350+</span>
+                </div>
+                <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-center justify-center gap-1">
+                  <span className="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest">Public Repos</span>
+                  <span className="text-xl md:text-3xl font-black text-blue-400">15</span>
+                </div>
+                <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col items-center justify-center gap-1">
+                  <span className="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest">Current Streak</span>
+                  <span className="text-xl md:text-3xl font-black text-purple-400">Active</span>
+                </div>
+              </div>
+
               <div className="p-4 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 overflow-hidden">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-[8px] md:text-sm text-slate-400">@KevinSan87 contributions</span>
-                    <Github size={14} className="text-slate-600" />
+                    <div className="flex items-center gap-2">
+                      <Github size={14} className="text-slate-400" />
+                      <span className="text-[8px] md:text-sm text-slate-300 font-bold">@KevinSan87</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1 text-[7px] md:text-[10px] text-slate-500">
+                        <Star size={10} className="text-yellow-500" />
+                        <span>Open Source</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-[7px] md:text-[10px] text-slate-500">
+                        <GitBranch size={10} className="text-blue-400" />
+                        <span>Commits</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-full overflow-x-auto pb-2">
+                  
+                  <div className="w-full overflow-x-auto pb-2 scrollbar-hide">
                     <img 
-                      src="https://ghchart.rshah.org/3b82f6/KevinSan87" 
+                      src="https://ghchart.rshah.org/10b981/KevinSan87" 
                       alt="Kevin's GitHub Contributions Chart"
-                      className="min-w-[600px] md:min-w-full h-auto filter brightness-90 contrast-125"
+                      className="min-w-[600px] md:min-w-full h-auto filter brightness-110 contrast-125"
                     />
                   </div>
-                  <div className="flex justify-end gap-4 text-[7px] md:text-[10px] text-slate-500">
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 bg-slate-800 rounded-sm"></div>
-                      <span>Less</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 bg-blue-900 rounded-sm"></div>
-                      <div className="w-2 h-2 bg-blue-700 rounded-sm"></div>
-                      <div className="w-2 h-2 bg-blue-500 rounded-sm"></div>
-                      <div className="w-2 h-2 bg-blue-300 rounded-sm"></div>
-                      <span>More</span>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-[7px] md:text-[10px] text-slate-500 italic">Last 12 months of activity</span>
+                    <div className="flex items-center gap-4 text-[7px] md:text-[10px] text-slate-500">
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 bg-slate-800 rounded-sm"></div>
+                        <span>Less</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 bg-[#10b98133] rounded-sm"></div>
+                        <div className="w-2 h-2 bg-[#10b98166] rounded-sm"></div>
+                        <div className="w-2 h-2 bg-[#10b981aa] rounded-sm"></div>
+                        <div className="w-2 h-2 bg-[#10b981] rounded-sm"></div>
+                        <span>More</span>
+                      </div>
                     </div>
                   </div>
                 </div>
