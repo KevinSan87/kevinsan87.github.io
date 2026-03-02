@@ -84,7 +84,7 @@ const Smartphone = () => {
                 initial={{ opacity: 0, filter: "brightness(2) blur(10px)" }}
                 animate={{ opacity: 1, filter: "brightness(1) blur(0px)" }}
                 transition={{ duration: 0.8 }}
-                className="absolute inset-0 pt-10 md:pt-12"
+                className="h-full w-full pt-10 md:pt-12"
               >
                 <ScreenContent />
               </motion.div>
