@@ -84,15 +84,9 @@ const Smartphone = () => {
                 initial={{ opacity: 0, filter: "brightness(2) blur(10px)" }}
                 animate={{ opacity: 1, filter: "brightness(1) blur(0px)" }}
                 transition={{ duration: 0.8 }}
-                className="absolute inset-0 flex flex-col"
+                className="h-full w-full pt-10 md:pt-12"
               >
-                {/* Notch Spacer */}
-                <div className="h-10 md:h-12 shrink-0" />
-                
-                {/* Content Container */}
-                <div className="flex-1 overflow-hidden">
-                  <ScreenContent />
-                </div>
+                <ScreenContent />
               </motion.div>
             )}
           </AnimatePresence>
