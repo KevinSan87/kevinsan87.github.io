@@ -370,15 +370,15 @@ const ScreenContent = () => {
                     </div>
                   </div>
                   
-                  <div className="w-full overflow-x-auto pb-2 scrollbar-hide">
+                  <div className="w-full flex items-center justify-center py-12 md:py-0 overflow-hidden">
                     <img 
                       src="https://ghchart.rshah.org/39d353/KevinSan87" 
                       alt="Kevin's GitHub Contributions Chart"
-                      className="w-full min-w-[400px] md:min-w-full h-auto filter invert-[0.85] hue-rotate-[140deg] brightness-[0.6] contrast-[1.4] mix-blend-screen"
+                      className="filter invert-[0.85] hue-rotate-[140deg] brightness-[0.6] contrast-[1.4] mix-blend-screen transition-transform duration-500 rotate-90 md:rotate-0 scale-[2.2] md:scale-100 w-auto h-auto md:w-full"
                     />
                   </div>
                   
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mt-4 md:mt-0">
                     <span className="text-[7px] md:text-[10px] text-slate-500 italic">Last 12 months of activity</span>
                     <div className="flex items-center gap-4 text-[7px] md:text-[10px] text-slate-500">
                       <div className="flex items-center gap-1">
