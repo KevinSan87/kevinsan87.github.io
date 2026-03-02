@@ -19,12 +19,12 @@ const Smartphone = () => {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center w-full max-w-[320px] aspect-[9/19] perspective-1000 scale-110 sm:scale-100 transition-transform duration-500">
+    <div className="relative flex items-center justify-center w-full max-w-[320px] aspect-[9/19] scale-110 sm:scale-100 transition-transform duration-500">
       {/* Phone Container */}
       <motion.div 
-        initial={{ rotateY: -10, rotateX: 5, opacity: 0, scale: 0.9 }}
-        animate={{ rotateY: 0, rotateX: 0, opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative w-full h-full bg-[#1e293b] rounded-[2.5rem] md:rounded-[3rem] border-[5px] md:border-[6px] border-[#334155] shadow-2xl overflow-hidden"
       >
         {/* Dynamic Island / Notch */}
@@ -81,9 +81,9 @@ const Smartphone = () => {
             {bootStatus === 'on' && (
               <motion.div 
                 key="on"
-                initial={{ opacity: 0, filter: "brightness(2) blur(10px)" }}
-                animate={{ opacity: 1, filter: "brightness(1) blur(0px)" }}
-                transition={{ duration: 0.8 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
                 className="h-full w-full pt-10 md:pt-12"
               >
                 <ScreenContent />
