@@ -68,7 +68,7 @@ const ScreenContent = () => {
   return (
     <div className="h-full w-full bg-[#020617] text-slate-300 font-mono text-[9px] md:text-sm overflow-hidden flex flex-col border border-slate-800/50 rounded-sm">
       {/* Top Bar - VS Code Style */}
-      <div className="bg-[#0f172a] p-1 md:p-2 flex items-center justify-between border-b border-slate-800/50">
+      <div className="bg-[#0f172a] p-1 md:p-2 flex items-center justify-between border-b border-slate-800/50 shrink-0">
         <div className="flex gap-1 md:gap-1.5">
           <div className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 cursor-pointer" />
           <div className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full bg-[#ffbd2e] hover:bg-[#ffbd2e]/80 cursor-pointer" />
@@ -81,9 +81,9 @@ const ScreenContent = () => {
         <div className="w-4 md:w-10" />
       </div>
 
-      <div className="flex-1 flex overflow-hidden">
-        {/* Sidebar */}
-        <div className="w-6 md:w-14 bg-[#0f172a] border-r border-slate-800/50 flex flex-col items-center py-3 gap-3 md:gap-6 text-slate-500">
+      <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+        {/* Sidebar / Top Navigation */}
+        <div className="w-full md:w-14 bg-[#0f172a] border-b md:border-b-0 md:border-r border-slate-800/50 flex flex-row md:flex-col items-center justify-center md:justify-start py-1.5 md:py-3 gap-4 md:gap-6 text-slate-500 shrink-0">
           <button 
             onClick={() => scrollToSection(aboutRef)}
             className="p-1 md:p-2 hover:bg-slate-800/50 rounded-md hover:text-blue-400 transition-colors"
@@ -417,7 +417,7 @@ const ScreenContent = () => {
       </div>
 
       {/* Footer Bar - VS Code Style */}
-      <div className="bg-blue-600 text-white px-2 md:px-4 py-1 md:py-1.5 flex items-center justify-between text-[6px] md:text-[10px] font-bold">
+      <div className="bg-blue-600 text-white px-2 md:px-4 py-1 md:py-1.5 flex items-center justify-between text-[6px] md:text-[10px] font-bold shrink-0">
         <div className="flex items-center gap-2 md:gap-4">
           <div className="flex items-center gap-1.5">
             <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full animate-pulse"></div>
