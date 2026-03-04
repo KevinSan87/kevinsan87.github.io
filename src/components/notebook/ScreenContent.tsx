@@ -16,9 +16,9 @@ const ScreenContent = () => {
   const activityRef = useRef<HTMLDivElement>(null);
 
   const [githubStats, setGithubStats] = useState({
-    repos: 0,
+    repos: 4,
     followers: 0,
-    contributions: "..."
+    contributions: "4,412"
   });
 
   useEffect(() => {
@@ -33,14 +33,14 @@ const ScreenContent = () => {
         const contribData = await contribResponse.json();
 
         setGithubStats({
-          repos: userData.public_repos || 0,
+          repos: userData.public_repos || 4,
           followers: userData.followers || 0,
-          contributions: contribData.total?.lastYear?.toLocaleString() || "0"
+          contributions: contribData.total?.lastYear?.toLocaleString() || "4,412"
         });
       } catch (error) {
         console.error("Erro ao buscar dados do GitHub:", error);
-        // Fallback caso a API falhe ou atinja limite
-        setGithubStats(prev => ({ ...prev, contributions: "2.7k+", repos: 15 }));
+        // Fallback com os dados fornecidos pelo usuário
+        setGithubStats(prev => ({ ...prev, contributions: "4,412", repos: 4 }));
       }
     };
 
