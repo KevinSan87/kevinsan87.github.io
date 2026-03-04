@@ -16,25 +16,30 @@ const ScreenContent = () => {
   const activityRef = useRef<HTMLDivElement>(null);
 
   const [githubStats, setGithubStats] = useState({
-    repos: 15,
+    repos: 0,
     followers: 0,
-    contributions: "2.7k+"
+    contributions: "..."
   });
 
   useEffect(() => {
     const fetchGithubData = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/KevinSan87');
-        const data = await response.json();
-        if (data.public_repos) {
-          setGithubStats(prev => ({
-            ...prev,
-            repos: data.public_repos,
-            followers: data.followers
-          }));
-        }
+        // Busca dados básicos do perfil
+        const userResponse = await fetch('https://api.github.com/users/KevinSan87');
+        const userData = await userResponse.json();
+        
+        // Busca contagem de contribuições (usando API pública de contagem)
+        const contribResponse = await fetch('https://github-contributions-api.deno.dev/KevinSan87/count');
+        const contribData = await contribResponse.json();
+
+        setGithubStats({
+          repos: userData.public_repos || 0,
+          followers: userData.followers || 0,
+          contributions: contribData.total?.lastYear?.toLocaleString() || "0"
+        });
       } catch (error) {
         console.error("Erro ao buscar dados do GitHub:", error);
+        setGithubStats(prev => ({ ...prev, contributions: "2.7k+" })); // Fallback
       }
     };
 
