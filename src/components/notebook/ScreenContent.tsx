@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from 'react';
-import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee, Activity, Star, GitBranch, CheckCircle2 } from 'lucide-react';
+import { Terminal, Code2, User, Cpu, Github, Mail, ExternalLink, Monitor, Globe, Database, Layers, Coffee, Activity, Star, GitBranch, CheckCircle2, QrCode } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -262,6 +262,35 @@ const ScreenContent = () => {
                     <p className="text-[11px] md:text-sm font-bold text-slate-400 uppercase tracking-wider">Responsabilidades:</p>
                     <div className="flex flex-wrap gap-2 md:gap-2">
                       {['Backend Logic', 'SQL Modeling', 'Scheduling Logic', 'React Frontend', 'Scalable Architecture'].map((resp) => (
+                        <span key={resp} className="text-[10px] md:text-xs px-2.5 py-1 bg-slate-800/50 rounded-md text-slate-400 border border-slate-700/50">
+                          {resp}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project: Gerador de QR Code */}
+                <div className="p-5 md:p-6 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-emerald-500/50 transition-colors group">
+                  <div className="flex justify-between items-start mb-4 md:mb-4">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <h3 className="font-bold text-[13px] md:text-xl text-emerald-400 group-hover:text-emerald-300 transition-colors">Gerador de QR Code</h3>
+                        <QrCode size={16} className="text-emerald-500 md:w-5 md:h-5" />
+                      </div>
+                      <p className="text-[11px] md:text-sm text-slate-500">Ferramenta de Utilidade Web</p>
+                    </div>
+                    <a href="https://github.com/KevinSan87/Gerador-de-QR-code" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-800 rounded-full hover:bg-emerald-600 transition-colors">
+                      <Github size={14} className="text-white md:w-4 md:h-4" />
+                    </a>
+                  </div>
+                  <p className="text-[12px] md:text-base text-slate-300 mb-5">
+                    Aplicação simples e eficiente para geração de códigos QR personalizados a partir de links ou textos.
+                  </p>
+                  <div className="space-y-3">
+                    <p className="text-[11px] md:text-sm font-bold text-slate-400 uppercase tracking-wider">Tecnologias:</p>
+                    <div className="flex flex-wrap gap-2 md:gap-2">
+                      {['JavaScript', 'QR Code API', 'Frontend Design', 'DOM Manipulation', 'Git/GitHub'].map((resp) => (
                         <span key={resp} className="text-[10px] md:text-xs px-2.5 py-1 bg-slate-800/50 rounded-md text-slate-400 border border-slate-700/50">
                           {resp}
                         </span>
