@@ -210,7 +210,7 @@ const ScreenContent = () => {
               </h2>
               <div className="space-y-5 text-slate-400 leading-relaxed text-[12px] md:text-base">
                 <p>
-                  Estudante de Software com foco em desenvolvimento Backend. Experiência na implementação de regras de negócio e modelagem de banco de dados, além de conhecimento em frontend para desenvolvimento de aplicações web completas.
+                  Estudante de Engenharia de Software com foco em desenvolvimento Backend. Experiência na implementação de regras de negócio e modelagem de banco de dados, além de conhecimento em frontend para desenvolvimento de aplicações web completas.
                 </p>
                 <p>
                   Tenho vivência prática aplicando conceitos como:
