@@ -285,7 +285,7 @@ const ScreenContent = () => {
                     </a>
                   </div>
                   <p className="text-[12px] md:text-base text-slate-300 mb-5">
-                    Aplicação simples e eficiente para geração de códigos QR personalizados a partir de links ou textos.
+                    A aplicação permite transformar qualquer URL em um QR Code, possibilitando visualizar, baixar a imagem gerada e manter um histórico das URLs utilizadas diretamente no navegador através do LocalStorage.
                   </p>
                   <div className="space-y-3">
                     <p className="text-[11px] md:text-sm font-bold text-slate-400 uppercase tracking-wider">Tecnologias:</p>
